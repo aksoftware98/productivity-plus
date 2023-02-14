@@ -1,0 +1,29 @@
+﻿
+<div class="border-rounded-6 blue-gradient text-center p-2" style="height:200px;color:white;">
+	<h1 class="font-xxl mb-0 mt-2 fw-700">@DateTime.Now.ToString("hh:mm")</h1>
+	<p class="m-0 secondary-text">@DateTime.Now.ToLongDateString()</p>
+	<p class="m-0 fw-600 third-level-text">Remaining time today</p>
+	<h1 class="font-xl mb-0 mt-2 fw-700 secondary-text">@_remainingTimeToday</h1>
+</div>
+
+@code {
+
+
+	private string? _remainingTimeToday = null;
+
+	protected override void OnInitialized()
+	{
+		var timer = new System.Timers.Timer(); 
+		timer.Interval = 1000;
+		timer.AutoReset = true;
+		timer.Elapsed += (o, s) =>
+		{
+			var remainingTime = (new TimeOnly(23, 59, 59, 999) - TimeOnly.FromDateTime(DateTime.Now));
+			_remainingTimeToday = remainingTime.ToString(@"hh\:mm\:ss");
+			StateHasChanged();
+		};
+		timer.Start();
+	}
+
+
+}

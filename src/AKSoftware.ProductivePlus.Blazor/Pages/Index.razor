@@ -1,0 +1,84 @@
+﻿@page "/"
+
+<PageTitle>AK Productivty+</PageTitle>
+
+<!-- Last 7 days sections -->
+<div class="d-flex justify-space-between pb-2 horizontal-overflow-auto">
+	<PPRingBox ShortTitle="Mon" Cycle="new ProductivityCycle() { WorkingTime = 10, TargetWorkingTime = 13, LearningTime = 20, TargetLearningTime = 24, MeditationSessionsCount = 5, TargetMeditationSessionsCount = 5 }" />
+	<PPRingBox ShortTitle="Tue" Cycle="new ProductivityCycle() { WorkingTime = 13, TargetWorkingTime = 13, LearningTime = 24, TargetLearningTime = 24, MeditationSessionsCount = 5, TargetMeditationSessionsCount = 5 }"/>
+	<PPRingBox ShortTitle="Wed" Cycle="new ProductivityCycle() { WorkingTime = 7, TargetWorkingTime = 13, LearningTime = 4, TargetLearningTime = 24, MeditationSessionsCount = 5, TargetMeditationSessionsCount = 5 }"/>
+	<PPRingBox ShortTitle="Thu" Cycle="new ProductivityCycle() { WorkingTime = 7, TargetWorkingTime = 13, LearningTime = 7, TargetLearningTime = 24, MeditationSessionsCount = 5, TargetMeditationSessionsCount = 5 }"/>
+	<PPRingBox ShortTitle="Fri" Cycle="new ProductivityCycle() { WorkingTime = 12, TargetWorkingTime = 13, LearningTime = 19, TargetLearningTime = 24, MeditationSessionsCount = 5, TargetMeditationSessionsCount = 5 }"/>
+	<PPRingBox ShortTitle="Sat" Cycle="new ProductivityCycle() { WorkingTime = 13, TargetWorkingTime = 13, LearningTime = 15, TargetLearningTime = 24, MeditationSessionsCount = 5, TargetMeditationSessionsCount = 5 }"/>
+	<PPRingBox ShortTitle="Sun" Cycle="new ProductivityCycle() { WorkingTime = 10, TargetWorkingTime = 13, LearningTime = 18, TargetLearningTime = 24, MeditationSessionsCount = 5, TargetMeditationSessionsCount = 5 }"/>
+</div>
+
+<div class="my-2">
+	<PPOngoingActivityAlert />
+</div>
+
+<!-- Main session -->
+<div class="row">
+	<div class="col-xsm-12 col-md-5 col-lg-4">
+		<div class="mr-3">
+			<PPHomeClock />
+		</div>
+	</div>
+
+	<div class="col-xsm-12 col-sm-12 col-md-7 col-lg-8">
+		<div class="ml-3">
+			<PPHomeStats Cycle="new ProductivityCycle() { WorkingTime = 325, TargetWorkingTime = 1000, LearningTime = 0, TargetLearningTime = 150, MeditationSessionsCount = 2, TargetMeditationSessionsCount = 5 }" />
+		</div>
+	</div>
+</div>
+
+
+<!-- Activty Sessions -->
+<section class="my-4">
+	<div class="d-flex justify-space-between align-center">
+		<h2 class="m-0">Activities</h2>
+
+		<a class="link font-s">Show All</a>
+	</div>
+
+
+	<div class="row">
+		<div class="col-lg-6 col-md-12 col-xsm-12">
+			<div class="pr-1">
+				<PPActivityItem Activity='new Activity {
+				ShortDescription = "Writing Blazor WebAssembly Book",
+				StartingDate = DateTime.Now.AddHours(-4),
+EndingDate = DateTime.Now
+}' />
+				<PPActivityItem Activity='new Activity {
+				ShortDescription = "Preparing for the Az-104 exam",
+StartingDate = DateTime.Now.AddMinutes(-135),
+EndingDate = DateTime.Now
+								}' />
+				<PPActivityItem Activity="_sampleActivity" />
+				<PPActivityItem Activity="_sampleActivity" />
+				<PPActivityItem Activity="_sampleActivity" />
+			</div>
+		</div>
+
+		<div class="col-lg-6 col-md-12 col-xsm-12">
+			<div class="pl-1">
+				<PPActivityItem Activity="_sampleActivity" />
+				<PPActivityItem Activity="_sampleActivity" />
+				<PPActivityItem Activity="_sampleActivity" />
+				<PPActivityItem Activity="_sampleActivity" />
+			</div>
+		</div>
+	</div>
+
+</section>
+
+@code
+{
+
+	private Activity _sampleActivity = new Activity
+		{
+			ShortDescription = "Working on implementing the Azure Functions to get the work to be best in its class"
+		};
+
+}

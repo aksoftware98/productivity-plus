@@ -1,0 +1,33 @@
+﻿
+<div class="border-rounded-6 light-gray-gradient text-center p-2 d-flex align-center" style="height:200px;">
+	<div style="width:180px;height:180px;">
+		<PPRings Cycle="Cycle" />
+	</div>
+
+	<div class="flex-grow p-2 flex-column">
+		<div class="d-flex justify-space-between">
+			<p class="sub-title-font m-0">Working</p>
+
+			<p class="sub-title-font m-0 fw-600 working-text-color">@Cycle.WorkingTime/@Cycle.TargetWorkingTime minutes</p>
+		</div>
+
+		<div class="d-flex justify-space-between mt-4">
+			<p class="sub-title-font m-0">Learning</p>
+
+			<p class="sub-title-font m-0 fw-600 learning-text-color">@Cycle.LearningTime/@Cycle.TargetLearningTime minutes</p>
+		</div>
+		
+		<div class="d-flex justify-space-between mt-4">
+			<p class="sub-title-font m-0">Meditation</p>
+
+			<p class="sub-title-font m-0 fw-600 meditation-text-color">@Cycle.MeditationSessionsCount/@Cycle.TargetMeditationSessionsCount sessions</p>
+		</div>
+	</div>
+	
+</div>
+@code {
+
+	[Parameter]
+	public ProductivityCycle Cycle { get; set; }
+
+}

@@ -1,0 +1,52 @@
+﻿
+<div style="@_containerStyles" class="text-center border-rounded-3 @_containerClasses p-2 mx-2" @onclick="OnClickAsync">
+	<p class="m-0 fw-600 my-1">@ShortTitle</p>
+	<div style="width:@Width;height:@Width">
+		<PPRings Cycle="Cycle" />
+	</div>
+</div>
+
+@code {
+	[Parameter]
+	public string Width { get; set; } = "75px";
+
+	[Parameter]
+	public string Height { get; set; } = "110px";
+
+	[Parameter]
+	public string? ShortTitle { get; set; }
+
+	[Parameter]
+	public ProductivityCycle Cycle { get; set; }
+
+	[Parameter]
+	public bool IsSelectable { get; set; } = true;
+
+	[Parameter]
+	public bool IsSelected { get; set; }
+
+	[Parameter]
+	public EventCallback<bool> IsSelectedChanged { get; set; }
+
+	private string _containerClasses => new CssBuilder()
+												.AddClass("dark-blue-gradient", IsSelected)
+												.AddClass("cursor-pointer", IsSelectable)
+												.AddClass("light-text", IsSelected)
+												.Build();
+
+	private string _containerStyles => new StyleBuilder()
+												.AddStyle("width", Width)
+												.AddStyle("height", Height)
+												.AddStyle("min-width", Width)
+												.AddStyle("min-height", Height)
+												.Build();
+
+	private async Task OnClickAsync()
+	{
+		if (!IsSelectable)
+			return;
+
+		IsSelected = true;
+		await IsSelectedChanged.InvokeAsync(IsSelected);
+	}
+}

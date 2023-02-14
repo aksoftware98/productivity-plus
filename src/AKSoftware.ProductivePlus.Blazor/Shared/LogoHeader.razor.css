@@ -1,0 +1,38 @@
+
+.big-logo {
+    width: 45px;
+}
+
+.small-logo {
+    width: 30px;
+}
+
+.logo-header {
+    z-index: 9998;
+    transition: 0.2s;
+}
+
+.slim-header {
+    height:40px; 
+}
+
+.thick-header {
+    height: 70px;
+}
+
+.logo-section {
+    z-index: 9999;
+    transition: 0.2s;
+}
+
+.app-logo {
+    transition: 0.2s;
+}
+
+.app-logo-name {
+    transition: 0.2s; 
+}
+
+.acrlyic-backdrop {
+    transition: 0.2s;
+}

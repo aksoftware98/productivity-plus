@@ -1,0 +1,23 @@
+.active-activity-gradient {
+    background: linear-gradient(90deg, #18EA4F, #01DE3A,#00B500);
+    background-size: 200% 200%;
+    animation: gradient 2s ease-in-out infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.ongoing-icon {
+    width: 30px; 
+}

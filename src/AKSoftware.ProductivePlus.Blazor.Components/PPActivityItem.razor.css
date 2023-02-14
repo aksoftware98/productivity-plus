@@ -1,0 +1,19 @@
+img {
+    width: 40px; 
+}
+
+.short-description {
+    width: 300px;
+}
+
+.activity-card {
+    transition: 0.2s; 
+}
+
+    .activity-card:hover {
+        background-color: #dae2ea;
+    }
+
+    .activity-card:active {
+        background-color: #cfd5db;
+    }

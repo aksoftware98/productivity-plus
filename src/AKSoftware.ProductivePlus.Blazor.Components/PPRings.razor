@@ -1,0 +1,18 @@
+﻿
+<ThreeRings 
+	FirstMaxValue="Cycle.TargetWorkingTime" 
+	SecondMaxValue="Cycle.TargetLearningTime" 
+	ThirdMaxValue="Cycle.TargetMeditationSessionsCount"
+	FirstValue="Cycle.WorkingTime" 
+	SecondValue="Cycle.LearningTime" 
+	ThirdValue="Cycle.MeditationSessionsCount"
+	OutsideRingGradient='new GradientColor("#FA5454", "#B50000")'
+	CenterRingGradient='new GradientColor("#08B500", "#00F64E")'
+	SmallRingGradient='new GradientColor("#54BBFA", "#0078C2")' />
+
+@code {
+
+	[Parameter]
+	public ProductivityCycle Cycle { get; set; }
+
+}

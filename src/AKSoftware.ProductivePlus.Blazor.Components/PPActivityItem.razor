@@ -1,0 +1,44 @@
+﻿<div class="activity-card cursor-pointer border-rounded-2 bg-gray d-flex align-center activity-card py-2 px-3 mt-2">
+	<img src="icons/suitcase.png" />
+
+	<div class="d-flex flex-column flex-grow ml-2">
+		<h3 class="fw-600 working-text-color m-0 text-ellipsis @_titleClasses">@GetActivityTitle()</h3>
+		<p class="short-description mb-0 fw-200 font-s mt-1 text-ellipsis @_descriptionClasses" title="@GetActivityDescription()">@GetActivityDescription()</p>
+	</div>
+
+	<div class="flex-shrink px-2">
+		<h4 class="m-0 fw-600">@GetActivityTime()</h4>
+	</div>
+</div>
+
+@code {
+
+	[Parameter]
+	public Activity? Activity { get; set; }
+
+	private string GetActivityTitle()
+	{
+		// TODO: Get the title by the activity type
+		return "Work or learn";
+	}
+
+	private string? GetActivityDescription()
+	{
+		return Activity?.ShortDescription;
+	}
+	private static Random _random = new Random(); 
+	private string GetActivityTime()
+	{
+		var values = new[] { "2h 33m", "5h 54m", "1h 31m", "3h 18m", "3h 44m", "2h 50m" };
+		return values[_random.Next(values.Length)];
+	}
+
+	private string _titleClasses => new CssBuilder()
+										.AddClass("working-text-color", Activity?.ActivityType == ActivityType.WorkingTime)
+										.AddClass("learning-text-color", Activity?.ActivityType == ActivityType.LearningTime)
+										.AddClass("meditation-text-color", Activity?.ActivityType == ActivityType.MeditationSessionsCount)
+										.Build();
+
+	private string _descriptionClasses => "";
+
+}

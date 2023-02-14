@@ -1,0 +1,112 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+<button @onclick="Increase">+</button>
+
+<div class="row">
+	<div style="width:110px;height:110px">
+		<ThreeRings FirstMaxValue="100" SecondMaxValue="5" ThirdMaxValue="70"
+					FirstValue="30" SecondValue="2" ThirdValue="50"
+					OutsideRingGradient='new GradientColor("#FA5454", "#B50000")'
+					CenterRingGradient='new GradientColor("#08B500", "#00F64E")'
+					SmallRingGradient='new GradientColor("#54BBFA", "#0078C2")' />
+	</div>
+	<div style="width:110px;height:110px">
+		<ThreeRings FirstMaxValue="100" SecondMaxValue="5" ThirdMaxValue="70"
+					FirstValue="30" SecondValue="2" ThirdValue="50"
+					OutsideRingGradient='new GradientColor("#FA5454", "#B50000")'
+					CenterRingGradient='new GradientColor("#08B500", "#00F64E")'
+					SmallRingGradient='new GradientColor("#54BBFA", "#0078C2")' />
+	</div>
+	<div style="width:110px;height:110px">
+		<ThreeRings FirstMaxValue="100" SecondMaxValue="5" ThirdMaxValue="70"
+					FirstValue="30" SecondValue="2" ThirdValue="50"
+					OutsideRingGradient='new GradientColor("#FA5454", "#B50000")'
+					CenterRingGradient='new GradientColor("#08B500", "#00F64E")'
+					SmallRingGradient='new GradientColor("#54BBFA", "#0078C2")' />
+	</div>
+	<div style="width:110px;height:110px">
+		<ThreeRings FirstMaxValue="100" SecondMaxValue="5" ThirdMaxValue="70"
+					FirstValue="30" SecondValue="2" ThirdValue="50"
+					OutsideRingGradient='new GradientColor("#FA5454", "#B50000")'
+					CenterRingGradient='new GradientColor("#08B500", "#00F64E")'
+					SmallRingGradient='new GradientColor("#54BBFA", "#0078C2")' />
+	</div>
+	<div style="width:110px;height:110px">
+		<ThreeRings FirstMaxValue="100" SecondMaxValue="5" ThirdMaxValue="70"
+					FirstValue="30" SecondValue="2" ThirdValue="50"
+					OutsideRingGradient='new GradientColor("#FA5454", "#B50000")'
+					CenterRingGradient='new GradientColor("#08B500", "#00F64E")'
+					SmallRingGradient='new GradientColor("#54BBFA", "#0078C2")' />
+	</div>
+	<div style="width:110px;height:110px">
+		<ThreeRings FirstMaxValue="100" SecondMaxValue="5" ThirdMaxValue="70"
+					FirstValue="30" SecondValue="2" ThirdValue="50"
+					OutsideRingGradient='new GradientColor("#FA5454", "#B50000")'
+					CenterRingGradient='new GradientColor("#08B500", "#00F64E")'
+					SmallRingGradient='new GradientColor("#54BBFA", "#0078C2")' />
+	</div>
+	<div style="width:110px;height:110px">
+		<ThreeRings FirstMaxValue="100" SecondMaxValue="5" ThirdMaxValue="70"
+					FirstValue="30" SecondValue="2" ThirdValue="50"
+					OutsideRingGradient='new GradientColor("#FA5454", "#B50000")'
+					CenterRingGradient='new GradientColor("#08B500", "#00F64E")'
+					SmallRingGradient='new GradientColor("#54BBFA", "#0078C2")' />
+	</div>
+	<div style="width:110px;height:110px">
+		<ThreeRings FirstMaxValue="100" SecondMaxValue="5" ThirdMaxValue="70"
+					FirstValue="30" SecondValue="2" ThirdValue="50"
+					OutsideRingGradient='new GradientColor("#FA5454", "#B50000")'
+					CenterRingGradient='new GradientColor("#08B500", "#00F64E")'
+					SmallRingGradient='new GradientColor("#54BBFA", "#0078C2")' />
+	</div>
+	<div style="width:110px;height:110px">
+		<ThreeRings FirstMaxValue="100" SecondMaxValue="5" ThirdMaxValue="70"
+					FirstValue="30" SecondValue="2" ThirdValue="50"
+					OutsideRingGradient='new GradientColor("#FA5454", "#B50000")'
+					CenterRingGradient='new GradientColor("#08B500", "#00F64E")'
+					SmallRingGradient='new GradientColor("#54BBFA", "#0078C2")' />
+	</div>
+	<div style="width:110px;height:110px">
+		<ThreeRings FirstMaxValue="100" SecondMaxValue="5" ThirdMaxValue="70"
+					FirstValue="30" SecondValue="2" ThirdValue="50"
+					OutsideRingGradient='new GradientColor("#FA5454", "#B50000")'
+					CenterRingGradient='new GradientColor("#08B500", "#00F64E")'
+					SmallRingGradient='new GradientColor("#54BBFA", "#0078C2")' />
+	</div>
+	<div style="width:110px;height:110px">
+		<ThreeRings FirstMaxValue="100" SecondMaxValue="5" ThirdMaxValue="70"
+					FirstValue="30" SecondValue="2" ThirdValue="50"
+					OutsideRingGradient='new GradientColor("#FA5454", "#B50000")'
+					CenterRingGradient='new GradientColor("#08B500", "#00F64E")'
+					SmallRingGradient='new GradientColor("#54BBFA", "#0078C2")' />
+	</div>
+</div>
+
+	<div class="d-flex justify-content-center mt-10">
+		<div style="width:500px;height:500px;position:relative">
+			<Ring Width="400px" Height="400px" Value="_counter" RingGradient='new GradientColor("#FA5454", "#B50000")'
+				  style="position:absolute;top:50px;left:50px;" />
+			<Ring Width="270px" Height="270px" Value="25" RingGradient='new GradientColor("#08B500", "#00F64E")'
+				  style="position:absolute;top:115px;left:115px;" />
+			<Ring Width="170px" Height="170px" Value="100" RingGradient='new GradientColor("#54BBFA", "#0078C2")'
+				  style="position:absolute;top:165px;left:165px;" />
+		</div>
+
+	</div>
+
+	@code
+	{
+		private int _counter = 50;
+
+		private void Increase()
+		{
+			_counter++;
+		}
+	}
