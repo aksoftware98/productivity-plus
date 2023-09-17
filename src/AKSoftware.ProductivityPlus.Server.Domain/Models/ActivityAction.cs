@@ -6,16 +6,16 @@ namespace AKSoftware.ProductivityPlus.Server.Domain.Models
     /// <summary>
     /// Represents an action for a specific activity, it can be a work session for a work activity, or a meditation session for a meditation activity, etc.
     /// </summary>
-    public class Action : Entity
+    public class ActivityAction : Entity
     {
 
-        public Action()
+        public ActivityAction()
         {
             ActivityId = string.Empty;
             UserId = string.Empty;
             CreationDate = DateTimeOffset.UtcNow;
             ModificationDate = DateTimeOffset.UtcNow;
-            Discriminator = "Action";
+            Discriminator = "ActivityAction";
         }
 
         [JsonProperty("description")]
@@ -41,14 +41,14 @@ namespace AKSoftware.ProductivityPlus.Server.Domain.Models
 
         public bool IsFinished => EndDate != null || ActionTime != null;
 
-        public static Action Create(Activity activity, string userId, string? description = null)
+        public static ActivityAction Create(Activity activity, string userId, string? description = null)
         {
             if (activity == null)
                 throw new ArgumentNullException(nameof(activity));
             if (string.IsNullOrWhiteSpace(userId))
                 throw new InvalidInputException("The user id can not be null or empty");
 
-            var action = new Action
+            var action = new ActivityAction
             {
                 ActivityId = activity.Id,
                 Description = description,
