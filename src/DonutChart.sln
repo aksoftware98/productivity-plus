@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AKSoftware.ProductivePlus.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AKSoftware.ProductivePlus.Client.Services", "AKSoftware.ProductivePlus.Client.Services\AKSoftware.ProductivePlus.Client.Services.csproj", "{46DEDA20-343B-42E2-B914-4CDF90661B56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AKSoftware.ProductivityPlus.Server.Domain", "AKSoftware.ProductivityPlus.Server.Domain\AKSoftware.ProductivityPlus.Server.Domain.csproj", "{21F80563-4117-4AC7-BC65-B822A2CDC79D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,14 +51,20 @@ Global
 		{46DEDA20-343B-42E2-B914-4CDF90661B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46DEDA20-343B-42E2-B914-4CDF90661B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46DEDA20-343B-42E2-B914-4CDF90661B56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21F80563-4117-4AC7-BC65-B822A2CDC79D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21F80563-4117-4AC7-BC65-B822A2CDC79D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21F80563-4117-4AC7-BC65-B822A2CDC79D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21F80563-4117-4AC7-BC65-B822A2CDC79D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{4119C3EF-F885-4079-8B4D-65B2BF8AE640} = {930D287B-291B-43FC-A019-02AE09402AC3}
 		{B5D98039-AEED-441D-95A5-0404DAAB5A75} = {930D287B-291B-43FC-A019-02AE09402AC3}
 		{EA82943A-32AF-4829-B0A5-0E580DEA773B} = {930D287B-291B-43FC-A019-02AE09402AC3}
 		{46DEDA20-343B-42E2-B914-4CDF90661B56} = {930D287B-291B-43FC-A019-02AE09402AC3}
+		{21F80563-4117-4AC7-BC65-B822A2CDC79D} = {8A47B9D1-EE99-45E9-8548-D5255D8C5BF2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D108F62-B24E-4D72-AF6E-068F951AED68}
