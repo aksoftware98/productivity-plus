@@ -19,9 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AKSoftware.ProductivePlus.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AKSoftware.ProductivePlus.Client.Services", "AKSoftware.ProductivePlus.Client.Services\AKSoftware.ProductivePlus.Client.Services.csproj", "{46DEDA20-343B-42E2-B914-4CDF90661B56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AKSoftware.ProductivityPlus.Server.Domain", "AKSoftware.ProductivityPlus.Server.Domain\AKSoftware.ProductivityPlus.Server.Domain.csproj", "{21F80563-4117-4AC7-BC65-B822A2CDC79D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AKSoftware.ProductivityPlus.Server.Domain", "AKSoftware.ProductivityPlus.Server.Domain\AKSoftware.ProductivityPlus.Server.Domain.csproj", "{21F80563-4117-4AC7-BC65-B822A2CDC79D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AKSoftware.ProductivityPlus.Server.Api", "AKSoftware.ProductivityPlus.Server.Api\AKSoftware.ProductivityPlus.Server.Api.csproj", "{A7A066A9-5F1A-4AB4-9AE1-C85BF36F6F20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AKSoftware.ProductivityPlus.Server.Api", "AKSoftware.ProductivityPlus.Server.Api\AKSoftware.ProductivityPlus.Server.Api.csproj", "{A7A066A9-5F1A-4AB4-9AE1-C85BF36F6F20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

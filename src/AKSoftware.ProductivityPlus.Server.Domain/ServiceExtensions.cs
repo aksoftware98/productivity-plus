@@ -14,7 +14,7 @@ public static class ServiceExtensions
 
 	public static IServiceCollection AddAppServices(this IServiceCollection services, IConfiguration config)
 	{
-		return services.AddSingleton(sp => new CosmosClient(config["CosmosDb:ConnectionString"], new()
+		return services.AddSingleton(sp => new CosmosClient(config["CosmosDB:ConnectionString"], new()
 		{
 			AllowBulkExecution = true
 		}));

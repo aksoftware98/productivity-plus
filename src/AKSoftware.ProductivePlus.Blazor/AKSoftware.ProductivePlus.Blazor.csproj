@@ -17,4 +17,8 @@
     <ProjectReference Include="..\AKSoftware.ProductivePlus.Blazor.Components\AKSoftware.ProductivePlus.Blazor.Components.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\fluent-emojies\" />
+  </ItemGroup>
+
 </Project>
