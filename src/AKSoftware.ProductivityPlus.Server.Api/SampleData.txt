@@ -1,0 +1,3 @@
+{"step":"PostAttributeCollection","client_id":"d8a20d5b-4ece-46ba-8f3a-818280525c82","ui_locales":"en-US","email":"loydudorko@gufum.com","surname":"Hoor","displayName":"Logo Hoor","givenName":"Logo","identities":[{"signInType":"emailAddress","issuer":"ahmadmozaffar.onmicrosoft.com","issuerAssignedId":"loydudorko@gufum.com"}]}
+
+{"step":"PostAttributeCollection","client_id":"d8a20d5b-4ece-46ba-8f3a-818280525c82","ui_locales":"en-US","email":"loydudorko@gufum.com","surname":"Hoor","displayName":"Logo Hoor","givenName":"Logo","identities":[{"signInType":"emailAddress","issuer":"ahmadmozaffar.onmicrosoft.com","issuerAssignedId":"loydudorko@gufum.com"}]}
