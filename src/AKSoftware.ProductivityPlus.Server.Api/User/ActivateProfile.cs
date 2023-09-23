@@ -17,12 +17,12 @@ using Microsoft.OpenApi.Models;
 
 namespace AKSoftware.ProductivityPlus.Server.Api.User
 {
-	public class CreateProfile
+	public class ActivateProfile
 	{
-		private readonly ILogger<CreateProfile> _logger;
+		private readonly ILogger<ActivateProfile> _logger;
 		private readonly IUserProfilesRepository _userProfilesRepository;
 		private readonly IConfiguration _config;
-		public CreateProfile(ILogger<CreateProfile> log, 
+		public ActivateProfile(ILogger<ActivateProfile> log, 
 							 IUserProfilesRepository userProfilesRepository, 
 							 IConfiguration config)
 		{
@@ -34,9 +34,7 @@ namespace AKSoftware.ProductivityPlus.Server.Api.User
 		// TODO: Implement a better error handling for the over all process
 		// TODO: Handle the case when the Azure Active Directory B2C API connectors sends multiple requests by managing the concurrency of the code
 		[FunctionName("ProfileActivation")]
-		[OpenApiOperation(operationId: "Run", tags: new[] { "name" })]
-		[OpenApiParameter(name: "name", In = ParameterLocation.Query, Required = true, Type = typeof(string), Description = "The **Name** parameter")]
-		[OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
+		[OpenApiIgnore]
 		public async Task<IActionResult> Run(
 			[HttpTrigger(AuthorizationLevel.Function, "post", Route = "profiles/activate")] HttpRequest req)
 		{
