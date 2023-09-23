@@ -31,6 +31,8 @@ namespace AKSoftware.ProductivityPlus.Server.Api.User
 			_config = config;
 		}
 
+		// TODO: Implement a better error handling for the over all process
+		// TODO: Handle the case when the Azure Active Directory B2C API connectors sends multiple requests by managing the concurrency of the code
 		[FunctionName("ProfileActivation")]
 		[OpenApiOperation(operationId: "Run", tags: new[] { "name" })]
 		[OpenApiParameter(name: "name", In = ParameterLocation.Query, Required = true, Type = typeof(string), Description = "The **Name** parameter")]
@@ -72,7 +74,9 @@ namespace AKSoftware.ProductivityPlus.Server.Api.User
 
 			return new OkObjectResult(new
 			{
-				isComplete
+				version = "1.0.0",
+				action = "Continue",
+				extension_IsProfileComplete = isComplete,
 			});
 		}
 
