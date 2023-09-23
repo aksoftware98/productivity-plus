@@ -35,7 +35,7 @@ public class UserProfile : Entity
 	[JsonProperty("displayName")]
 	public string DisplayName { get; private set; }
 
-	[JsonProperty("avatarUrl")]
+	[JsonProperty("userId")]
 	public string UserId { get; private set; }
 
 	[JsonProperty("avatarUrl")]
@@ -48,8 +48,13 @@ public class UserProfile : Entity
 	public Goal WeeklyGoal { get; private set; }
 	// TODO: Add other metadata like social media links, etc.
 
-	public static UserProfile Create(string firstName, string lastName, string email, string displayName, string avatarUrl)
+	[JsonProperty("isComplete")]
+	public bool IsComplete { get; private set; }
+
+	public static UserProfile Create(string userId, string firstName, string lastName, string email, string displayName, string avatarUrl)
 	{
+		if (string.IsNullOrEmpty(userId))
+			throw new ArgumentNullException(nameof(userId));
 		if (string.IsNullOrEmpty(firstName))
 			throw new ArgumentNullException(nameof(firstName));
 		if (string.IsNullOrEmpty(lastName))
@@ -63,12 +68,20 @@ public class UserProfile : Entity
 
 		return new UserProfile
 		{
+			UserId = userId,
 			FirstName = firstName,
 			LastName = lastName,
 			Email = email,
 			DisplayName = displayName,
-			AvatarUrl = avatarUrl
+			AvatarUrl = avatarUrl,
+			IsComplete = false,
 		};
+	}
+
+	public void CompleteProfile()
+	{
+		IsComplete = true;
+		ModificationDate = DateTime.UtcNow;
 	}
 
 	public void SetDisplayName(string displayName)

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using AKSoftware.ProductivityPlus.Server.Domain.Interfaces;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,8 @@ public static class ServiceExtensions
 		return services.AddSingleton(sp => new CosmosClient(config["CosmosDB:ConnectionString"], new()
 		{
 			AllowBulkExecution = true
-		}));
+		}))
+			.AddScoped<IUserProfilesRepository, UserProfilesRepository>();
 	}
 
 }

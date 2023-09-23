@@ -1,6 +1,8 @@
-﻿namespace AKSoftware.ProductivityPlus.Server.Domain.Repositories
+﻿using AKSoftware.ProductivityPlus.Server.Domain.Interfaces;
+
+namespace AKSoftware.ProductivityPlus.Server.Domain.Repositories
 {
-	public class UserProfilesRepository
+    public class UserProfilesRepository : IUserProfilesRepository
 	{
 
 		private readonly CosmosClient _cosmosClient;
@@ -30,11 +32,34 @@
 			return response.Resource.FirstOrDefault();
 		}
 
+		public async Task<UserProfile?> GetByEmailAsync(string email)
+		{
+			string query = $"SELECT * FROM c WHERE c.email = @email and c.discriminator = 'UserProfile'";
+			var queryDefinition = new QueryDefinition(query)
+				.WithParameter("@email", email);
+
+			var iterator = _container.GetItemQueryIterator<UserProfile>(queryDefinition);
+			var response = await iterator.ReadNextAsync();
+			return response.Resource.FirstOrDefault();
+		}
+
 		public async Task<UserProfile> UpdateDisplayNameAsync(string userId, UserProfile userProfile)
 		{
 			var patchItems = new List<PatchOperation>()
 			{
 				PatchOperation.Replace("/displayName", userProfile.DisplayName),
+				PatchOperation.Replace("/modificationDate", userProfile.ModificationDate)
+			};
+
+			var response = await _container.PatchItemAsync<UserProfile>(userProfile.Id, new PartitionKey(userId), patchItems);
+			return response.Resource;
+		}
+
+		public async Task<UserProfile> CompleteProfileAsync(string userId, UserProfile userProfile)
+		{
+			var patchItems = new List<PatchOperation>()
+			{
+				PatchOperation.Replace("/isComplete", true),
 				PatchOperation.Replace("/modificationDate", userProfile.ModificationDate)
 			};
 
