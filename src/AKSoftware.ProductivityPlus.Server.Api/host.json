@@ -2,9 +2,9 @@
     "version": "2.0",
   "logging": {
     "logLevel": {
-"default": "Information",
+"default": "Warning",
         "Microsoft": "Warning",
-        "Microsoft.Hosting.Lifetime": "Information"
+        "Microsoft.Hosting.Lifetime": "Warning"
     },
     "applicationInsights": {
       "samplingSettings": {

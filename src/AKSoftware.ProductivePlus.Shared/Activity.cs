@@ -15,7 +15,7 @@ namespace AKSoftware.ProductivePlus.Shared
         public int TotalUnits { get; set; }
 
         /// <summary>
-        /// Starting time and date of the acitivty (Required only for the working and learning activities) 
+        /// Starting time and date of the activity (Required only for the working and learning activities) 
         /// </summary>
         public DateTime? StartingDate { get; set; }
 
@@ -45,12 +45,12 @@ namespace AKSoftware.ProductivePlus.Shared
         public WorkingActivityPriority? WorkingActivityPriority { get; set; }
 
         /// <summary>
-        /// Type of the meditiation activity achieved (Required only for meditation activity type) 
+        /// Type of the meditation activity achieved (Required only for meditation activity type) 
         /// </summary>
         public MeditationActivityType? MeditationActivityType { get; set; }
 
         /// <summary>
-        /// Short description that describes the activity and what have been acheived through it 
+        /// Short description that describes the activity and what have been achieved through it 
         /// </summary>
         public string? ShortDescription { get; set; }
 
